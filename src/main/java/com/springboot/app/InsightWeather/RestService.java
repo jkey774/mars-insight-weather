@@ -11,7 +11,7 @@ import java.util.Collections;
 @Service
 public class RestService {
     private final RestTemplate restTemplate;
-    private final String apiKey = System.getenv("InSight_API_Key");
+    private final String apiKey = System.getenv().get("API_KEY");
 
     public RestService(RestTemplateBuilder restTemplateBuilder) {
         this.restTemplate = restTemplateBuilder
