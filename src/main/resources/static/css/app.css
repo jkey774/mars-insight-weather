@@ -1,96 +1,3 @@
-/*html {
-    font-family: "Montserrat",Helvetica,Arial,sans-serif;
-}
-body {
-    font-family: "Montserrat",Helvetica,Arial,sans-serif;
-    font-weight: 300;
-    line-height: 1.4;
-    margin: 0;
-    background: url("../images/insight_weather_bg.jpg") no-repeat top center;
-    background-size: cover;
-}
-
-html, html a, select, input, button {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-@media all{
-h1{font-size:2em;margin:0.67em 0;}
-p{margin:1em 0;}
-::-moz-selection{background:#b3d4fc;text-shadow:none;}
-::selection{background:#b3d4fc;text-shadow:none;}
-@media print{
-*{background:transparent!important;color:#000!important;box-shadow:none!important;text-shadow:none!important;}
-p{orphans:3;widows:3;}
-}
-*,*:before,*:after{box-sizing:border-box;}
-p{line-height:1.4em;margin-bottom:17px;margin-top:0;font-size:16px;color:#222;}
-@media (min-width: 600px), print{
-p{font-size:18px;}
-}
-@media (min-width: 769px), print{
-p{margin-bottom:20px;font-size:16px;}
-}
-@media (min-width: 1024px), print{
-p{font-size:17px;}
-}
-@media (min-width: 1200px){
-p{font-size:18px;}
-}
-h1{line-height:1.2em;font-weight:700;letter-spacing:-.01em;margin:1.2em 0 .5em;}
-@media (min-width: 769px), print{
-h1{margin:1.5em 0 .5em;}
-}
-h1{font-size:2.2em;letter-spacing:-.03em;}
-p{margin:1em 0;font-size:100%;}
-.wysiwyg_content p{line-height:1.4em;}
-.wysiwyg_content p{word-wrap:break-word;}
-}
-h1.textWhite.textAlignLeft{color:white;}
-.vCentered .vCenteredInner{display:table-cell;vertical-align:middle;}
-.textAlignCenter{text-align:center!important;}
-.vCentered{display:table;}
-.textLarger{font-size:150%;line-height:normal;}
-.textWhite{color:#fff!important;}
-#InSight-Weather-Report.section .gradientOverlay{background:-owg-linear-gradient(to right, rgba(0,0,0,0.6) 0%, transparent 70%);background:-webkit-linear-gradient(to right, rgba(0,0,0,0.6) 0%, transparent 70%);background:-moz-linear-gradient(to right, rgba(0,0,0,0.6) 0%, transparent 70%);background:-o-linear-gradient(to right, rgba(0,0,0,0.6) 0%, transparent 70%);background:linear-gradient(to right, rgba(0,0,0,0.6) 0%, transparent 70%);z-index:1;}
-#InSight-Weather-Report #InSight-Weather-Content{padding:0 5% 0;}
-#InSight-Weather-Report #InSight-Weather-Content #InSight-Weather-Data{padding:50px 0 0 20px;width:55%;position:relative;z-index:1;}
-#InSight-Weather-Report #InSight-Weather-Data p{line-height:normal;width:95%;color:white;}
-#InSight-Weather-Report .slash,#InSight-Weather-Report .fadeWhite{color:rgba(255,255,255,0.5);}
-.degree .lbl_fahrenheit,.degree .lbl_celsius{cursor:pointer;}
-.temperatures.main .fahrenheit,.temperatures.main .celsius{text-align:right;display:inline-block;}
-.highs,.lows{display:table;}
-.highs span,.lows span{display:table-cell;padding:0 3px;text-align:right;}
-span.dateSol{font-size:16px;font-weight:600;}
-#InSight-Weather-Report .vCentered{padding:5% 0;width:100%;}
-#InSight-Weather-Report .temperatures.main{padding-left:5%;}
-#InSight-Weather-Report #InSight-tempDate .marsDate{font-weight:bold;font-size:larger;}
-#InSight-Weather-Report #InSight-tempDate .marsDate,#InSight-Weather-Report #InSight-tempDate .earthDate{display:block;}
-#InSight-Weather-Report #InSight-Forecast{margin:0 auto;text-align:center;}
-#InSight-Weather-Report #InSight-Forecast .item{width:11%;margin:20px 1% 50px;background-color:rgba(0,0,0,0.25);padding:15px 0.2%;display:inline-block;text-align:center;font-weight:500;letter-spacing:1px;font-size:14px;}
-#InSight-Weather-Report #InSight-Forecast .item .fadeWhiteLine{background-color:rgba(255,255,255,0.5);height:2px;width:80%;text-align:center;margin:10px auto;}
-#InSight-Weather-Report #InSight-Forecast .item  .dateUTC{font-size:13px;font-weight:500;letter-spacing:0;display:block;}
-#InSight-Weather-Report #InSight-Forecast .item .low{color:white;}
-@media only screen and (max-width: 840px){
-#InSight-Weather-Report #InSight-Weather-Content #InSight-Weather-Data{width:100%;}
-#InSight-Weather-Report.section .gradientOverlay{background:-owg-linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 70%);background:-webkit-linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 70%);background:-moz-linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 70%);background:-o-linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 70%);background:linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 70%);z-index:1;}
-#InSight-Weather-Report #InSight-Forecast .item{font-size:0.9em;margin:20px 1% 50px;line-height:normal;padding:8px 3px;}
-#InSight-Weather-Report #InSight-tempDate .earthDate,#InSight-Weather-Report #InSight-Forecast .item .dateSol{font-size:16px;}
-#InSight-Weather-Report #InSight-Forecast .item .dateUTC{font-weight:300;}
-#InSight-Weather-Report #InSight-tempDate .earthDate{display:block;}
-#InSight-Weather-Report #InSight-Forecast .item{font-size:0.8em;}
-#InSight-Weather-Report #InSight-Forecast .item:nth-child(-n+3),#InSight-Weather-Report #InSight-Forecast .item:nth-child(-n+4){display:none;}
-#InSight-Weather-Report #InSight-Forecast .item{width:25%;font-size:0.9em;}
-}
-
-html,
-body,
-#InSight-Weather-Report,
-#InSight-Weather-Report.section .gradientOverlay {
-    height: 100%;
-}*/
-
 /*! CSS Used from: Embedded ; media=all */
 html, html a, select, input, button {
     -webkit-font-smoothing: antialiased;
@@ -184,9 +91,9 @@ p{margin:1em 0;font-size:100%;}
 }
 .content_page .bread_and_nav_container{margin-top:0;margin-bottom:1.1rem;}
 .breadcrumbs{color:#257cdf;margin:0 0 1.2rem 0;}
-.module{padding:2.5em 0 2.2em;position:relative;}
+.module{padding:1em 0 2.2em;position:relative;}
 @media (min-width: 769px), print{
-.module{padding:4.8em 0 5em;}
+.module{padding:1em 0 5em;}
 }
 .grid_layout{max-width:100%;margin-left:auto;margin-right:auto;width:95%;}
 .grid_layout:after{content:" ";display:block;clear:both;}
