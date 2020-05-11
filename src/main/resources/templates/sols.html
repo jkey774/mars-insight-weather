@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Mars Weather | InSight Mission – NASA's InSight Mars Lander</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700|Raleway:300,400' rel='stylesheet'>
+    <link href="../static/css/app.css" th:href="@{/css/app.css}" rel="stylesheet" />
+</head>
+
+<body data-temperature-mode="fahrenheit" data-speed-mode="miles-per-hour">
+<section class="content_page module full_width">
+    <div class="grid_layout">
+        <article>
+            <header id="page_header">
+                <div class="bread_and_nav_container">
+                    <div class="breadcrumbs"></div>
+                </div>
+                <div class="article_title">Mars Weather</div>
+            </header>
+            <div class="clearfix" id="primary_column">
+                <div class="sectionOuter">
+                    <div id="InSight-Weather-Report" class="section">
+                        <div class="gradientOverlay">
+                            <div id="InSight-Weather-Content" class="vCentered">
+                                <div id="InSight-Weather-Data" class="vAlignTop textWhite">
+                                    <h1 class="textWhite textAlignLeft">Latest Weather <br>at Elysium Planitia</h1>
+                                    <p>InSight is taking daily weather measurements (temperature, wind, pressure) on the surface of Mars at Elysium Planitia, a flat, smooth plain near Mars’ equator. </p>
+                                    <div class="textLarger vCentered">
+                                        <div id="InSight-tempDate" class="vCenteredInner textAlignCenter">
+                                            <span class="marsDate" th:text="${'Sol ' + mostRecentSol.id}"></span>
+                                            <span class="earthDate" th:text="${mostRecentSol.earthDate.month + ' ' + mostRecentSol.earthDate.day}"></span>
+                                        </div>
+                                        <div class="temperatures main vCenteredInner fontBold textLarge">
+                                            <div class="highs">
+                                                <span class="text">High: </span>
+                                                <span class="fahrenheit" th:text="${mostRecentSol.airTemperature.maxFahrenheit + '°'}"></span>
+                                                <span class="celsius" th:text="${mostRecentSol.airTemperature.maxCelsius + '°'}"></span>
+                                                <span class="degree">
+                                                    <span class="lbl_fahrenheit">F</span><span class="slash"> | </span><span class="lbl_celsius fadeWhite">C</span>
+                                                </span>
+                                            </div>
+                                            <div class="lows">
+                                                <span class="text">Low: </span>
+                                                <span class="fahrenheit" th:text="${mostRecentSol.airTemperature.minFahrenheit + '°'}"></span>
+                                                <span class="celsius" th:text="${mostRecentSol.airTemperature.minCelsius + '°'}"></span>
+                                                <span class="degree">
+                                                    <span class="lbl_fahrenheit">F</span><span class="slash"> | </span><span class="lbl_celsius fadeWhite">C</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="InSight-Forecast" class="textWhite">
+                                <div class="item" th:each="sol : ${solsCalendar}">
+                                    <span class="dateSol" th:text="${'Sol ' + sol.id}"></span>
+                                    <span class="dateUTC" th:text="${sol.earthDate.monthAbbreviated + ' ' + sol.earthDate.day}"></span>
+                                    <div class="fadeWhiteLine"></div>
+                                    <div class="fahrenheit">
+                                        <span class="high">High: <nobr th:text="${sol.airTemperature.maxFahrenheit + '° F'}"></nobr><br></span>
+                                        <span class="low">Low: <nobr th:text="${sol.airTemperature.minFahrenheit + '° F'}"></nobr></span>
+                                    </div>
+                                    <div class="celsius">
+                                        <span class="high">High: <nobr th:text="${sol.airTemperature.maxCelsius + '° C'}"></nobr><br></span>
+                                        <span class="low">Low: <nobr th:text="${sol.airTemperature.minCelsius + '° C'}"></nobr></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="InSight-Weather-Observations" class="section">
+                        <h2>Daily Weather Report</h2>
+                        <div class="table_wrapper">
+                            <div>
+                                <table id="weather_observation" class="mb_table" style="width:100%;">
+                                    <thead>
+                                    <tr>
+                                        <th colspan="2" scope="col">Time</th>
+                                        <th colspan="3" scope="col" id="temperature_lbl">Air Temperature (<span class="lbl_fahrenheit">°F</span><span class="slash"> | </span><span class="lbl_celsius fadeBlack">°C</span>)</th>
+                                        <th colspan="4" scope="col" id="windspeed_lbl">Wind Speed (<span class="lbl_mph">mph</span><span class="slash"> | </span><span class="lbl_mps fadeBlack">m/s</span>) </th>
+                                        <th colspan="3" scope="col" id="pressure_lbl">Pressure (Pa)</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr id="weather_top">
+                                        <th scope="row" class="sol">Date</th>
+                                        <th scope="row" class="sol">Sol</th>
+                                        <td class="temperature max">Max.</td>
+                                        <td class="temperature avg">Avg.</td>
+                                        <td class="temperature min">Min.</td>
+                                        <td class="windspeed max">Max.</td>
+                                        <td class="windspeed avg">Avg.</td>
+                                        <td class="windspeed min">Min.</td>
+                                        <td class="windspeed direction">Direction<br><span style="font-size:x-small">(most common)</span></td>
+                                        <td class="pressure max">Max.</td>
+                                        <td class="pressure avg">Avg.</td>
+                                        <td class="pressure min">Min.</td>
+                                    </tr>
+                                    <tr th:each="sol : ${solsTable}">
+                                        <th scope="row" class="sol" th:text="${sol.earthDate.monthAbbreviated + ' ' + sol.earthDate.day}"></th>
+                                        <th scope="row" class="sol" th:text="${sol.id}"></th>
+                                        <td class="temperature max">
+                                            <span class="fahrenheit"><nobr th:text="${sol.airTemperature.maxFahrenheit + '° F'}"></nobr></span>
+                                            <span class="celsius"><nobr th:text="${sol.airTemperature.maxCelsius + '° C'}">1</nobr></span>
+                                        </td>
+                                        <td class="temperature avg">
+                                            <span class="fahrenheit"><nobr th:text="${sol.airTemperature.avgFahrenheit + '° F'}"></nobr></span>
+                                            <span class="celsius"><nobr th:text="${sol.airTemperature.avgCelsius + '° C'}">2</nobr></span>
+                                        </td>
+                                        <td class="temperature min">
+                                            <span class="fahrenheit"><nobr th:text="${sol.airTemperature.minFahrenheit + '° F'}"></nobr></span>
+                                            <span class="celsius"><nobr th:text="${sol.airTemperature.minCelsius + '° C'}">3</nobr></span>
+                                        </td>
+                                        <td class="windspeed max">
+                                            <span class="mph"><nobr th:text="${sol.windSpeed.maxMilesPerHour}"></nobr></span>
+                                            <span class="mps"><nobr th:text="${sol.windSpeed.maxMetersPerSecond}"></nobr></span>
+                                        </td>
+                                        <td class="windspeed avg">
+                                            <span class="mph"><nobr th:text="${sol.windSpeed.avgMilesPerHour}"></nobr></span>
+                                            <span class="mps"><nobr th:text="${sol.windSpeed.avgMetersPerSecond}"></nobr></span>
+                                        </td>
+                                        <td class="windspeed min">
+                                            <span class="mph"><nobr th:text="${sol.windSpeed.minMilesPerHour}"></nobr></span>
+                                            <span class="mps"><nobr th:text="${sol.windSpeed.minMetersPerSecond}"></nobr></span>
+                                        </td>
+                                        <td class="windspeed point" th:text="${sol.windDirection.compassPoint}"></td>
+                                        <td class="pressure max" th:text="${sol.airPressure.max}"></td>
+                                        <td class="pressure avg" th:text="${sol.airPressure.avg}"></td>
+                                        <td class="pressure min" th:text="${sol.airPressure.min}"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <figure class="inline-figure">
+                            <figcaption>
+                                <p>As more data from a particular sol is downlinked from the spacecraft (sometimes several days later), these values are recalculated, and consequently may change as more data is received on Earth.</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+<script type="text/javascript" src="../static/js/app.js" th:src="@{/js/app.js}"></script>
+</body>
+
+</html>
