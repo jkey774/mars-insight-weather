@@ -11,7 +11,8 @@ import java.util.Collections;
 @Service
 public class RestService {
     private final RestTemplate restTemplate;
-    private final String apiKey = System.getenv().get("API_KEY");
+    // private final String apiKey = System.getenv().get("API_KEY");
+    private final String apiKey = "wpSJBlKUbqK4ifu0ZnNMfxTxzuToP6BedUfc5DYB";
 
     public RestService(RestTemplateBuilder restTemplateBuilder) {
         this.restTemplate = restTemplateBuilder

@@ -23,7 +23,7 @@ public class SolsController {
         RestService restService = new RestService(restTemplateBuilder);
         ObjectMapper objectMapper = new ObjectMapper();
 
-        // JsonNode rootNode = objectMapper.readTree(new FileInputStream("/Users/jkey3/IdeaProjects/MyFirstSpringBootApp/src/main/java/com/springboot/myfirstapp/MyFirstSpringBootApp/ExampleJSON.json"));
+        // JsonNode rootNode = objectMapper.readTree(new FileInputStream("/Users/jkey3/IdeaProjects/InSight/src/main/java/com/springboot/app/InsightWeather/ExampleJSON.json"));
         JsonNode rootNode = objectMapper.readTree(restService.getSols());
 
         JsonNode solKeyNodes = rootNode.get("sol_keys");
