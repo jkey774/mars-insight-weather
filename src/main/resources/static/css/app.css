@@ -1,0 +1,263 @@
+/*! CSS Used from: Embedded ; media=all */
+html, html a, select, input, button {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    font-family: "Montserrat",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 0;
+}
+@media all{
+article,figcaption,figure,header,section{display:block;}
+a:focus{outline:thin dotted;}
+a:active,a:hover{outline:0;}
+h1{font-size:2em;margin:0.67em 0;}
+h2{font-size:1.5em;margin:0.83em 0;}
+strong{font-weight:bold;}
+p,pre{margin:1em 0;}
+pre{font-family:monospace, serif;_font-family:'courier new', monospace;font-size:1em;}
+pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word;}
+img{border:0;-ms-interpolation-mode:bicubic;}
+figure{margin:0;}
+table{border-collapse:collapse;border-spacing:0;}
+::-moz-selection{background:#b3d4fc;text-shadow:none;}
+::selection{background:#b3d4fc;text-shadow:none;}
+img{vertical-align:middle;}
+.clearfix:before,article:before,.content_page #primary_column:before,.clearfix:after,article:after,.content_page #primary_column:after{content:" ";display:table;}
+.clearfix:after,article:after,.content_page #primary_column:after{clear:both;}
+.clearfix,article,.content_page #primary_column{*zoom:1;}
+@media print{
+*{background:transparent!important;color:#000!important;box-shadow:none!important;text-shadow:none!important;}
+a,a:visited{text-decoration:underline;}
+a[href]:after{content:" (" attr(href) ")";}
+a[href^="javascript:"]:after{content:"";}
+pre{border:1px solid #999;page-break-inside:avoid;}
+thead{display:table-header-group;}
+tr,img{page-break-inside:avoid;}
+img{max-width:100%!important;}
+p,h2{orphans:3;widows:3;}
+h2{page-break-after:avoid;}
+}
+*,*:before,*:after{box-sizing:border-box;}
+img{width:100%;}
+p{line-height:1.4em;margin-bottom:17px;margin-top:0;font-size:16px;color:#222;}
+@media (min-width: 600px), print{
+p{font-size:18px;}
+}
+@media (min-width: 769px), print{
+p{margin-bottom:20px;font-size:16px;}
+}
+@media (min-width: 1024px), print{
+p{font-size:17px;}
+}
+@media (min-width: 1200px){
+p{font-size:18px;}
+}
+a{text-decoration:none;color:#257cdf;}
+a:hover{text-decoration:underline;}
+.button{font-weight:700;display:inline-block;margin-bottom:.5em;margin-left:auto;margin-right:auto;background-color:#3b788b;color:white;line-height:1em;border:0;text-decoration:none;border-radius:4px;cursor:pointer;text-shadow:none;font-size:13px;padding:12px 24px;text-transform:uppercase;white-space:nowrap;}
+@media (min-width: 769px), print{
+.button{font-size:14px;}
+}
+.button:hover{background-color:#5097ad;text-decoration:none;}
+.insight_page .button{color:white;background-color:#3D75B3;}
+.insight_page .button:hover{background-color:#4888D0;}
+html a{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+h1,h2{line-height:1.2em;font-weight:700;letter-spacing:-.01em;margin:1.2em 0 .5em;}
+@media (min-width: 769px), print{
+h1,h2{margin:1.5em 0 .5em;}
+}
+h1{font-size:2.2em;letter-spacing:-.03em;}
+h2{font-size:1.8em;letter-spacing:-.03em;}
+img{width:100%;}
+img{max-width:100%;}
+strong{font-weight:700;}
+p{margin:1em 0;font-size:100%;}
+.article_title{letter-spacing:-.02em;}
+.article_title{font-size:1.82em;margin-bottom:0em;font-weight:600;margin-top:0;}
+@media (min-width: 600px), print{
+.article_title{font-size:2.1em;margin-bottom:0em;}
+}
+@media (min-width: 769px), print{
+.article_title{font-size:2.38em;margin-bottom:0em;}
+}
+@media (min-width: 1024px), print{
+.article_title{font-size:2.52em;margin-bottom:0em;}
+}
+@media (min-width: 1200px){
+.article_title{font-size:2.66em;margin-bottom:0em;}
+}
+.content_page .bread_and_nav_container{margin-top:0;margin-bottom:1.1rem;}
+.breadcrumbs{color:#257cdf;margin:0 0 1.2rem 0;}
+.module{padding:1em 0 2.2em;position:relative;}
+@media (min-width: 769px), print{
+.module{padding:1em 0 5em;}
+}
+.grid_layout{max-width:100%;margin-left:auto;margin-right:auto;width:95%;}
+.grid_layout:after{content:" ";display:block;clear:both;}
+@media (min-width: 600px), print{
+.grid_layout{max-width:100%;margin-left:auto;margin-right:auto;width:95%;}
+.grid_layout:after{content:" ";display:block;clear:both;}
+}
+@media (min-width: 769px), print{
+.grid_layout{max-width:100%;margin-left:auto;margin-right:auto;width:90%;}
+.grid_layout:after{content:" ";display:block;clear:both;}
+}
+@media (min-width: 1024px), print{
+.grid_layout{max-width:1200px;width:97%;}
+.content_page .grid_layout{width:90%;}
+}
+.module header{margin-bottom:1em;position:relative;}
+figure{margin-bottom:1em;max-width:100%;}
+@media (min-width: 769px), print{
+figure{margin-bottom:2em;}
+}
+figure figcaption,figure figcaption p{margin-top:.8em;font-size:.8em;color:#5a6470;}
+@media (min-width: 769px), print{
+figure figcaption,figure figcaption p{font-size:.88em;}
+}
+.content_page #page_header{margin-bottom:1.5em;}
+@media (min-width: 769px), print{
+.content_page #page_header{margin-bottom:2em;}
+}
+.content_page #primary_column{margin-bottom:5.26316%;}
+@media (min-width: 600px), print{
+.content_page #primary_column{width:61.53846%;float:left;margin-right:2.5641%;margin-bottom:0;}
+}
+@media (min-width: 769px), print{
+.content_page #primary_column{width:64.40678%;float:left;margin-right:1.69492%;}
+}
+@media (min-width: 1024px), print{
+.content_page #primary_column{width:61.86441%;float:left;margin-right:1.69492%;}
+}
+@media (min-width: 1200px){
+.content_page #primary_column{width:59.32203%;float:left;margin-right:1.69492%;}
+}
+.content_page.full_width #primary_column{width:100%;}
+.insight_page a{color:#4A97E1;}
+a.inline_image_enlarge{display:block;position:relative;height:100%;}
+a.inline_image_enlarge .enlarge_icon{position:absolute;border-radius:6px;border:1px solid rgba(200,200,200,0.8);left:15px;bottom:15px;width:40px;height:40px;background-color:rgba(0,0,0,0.5);background-image:url(https://mars.nasa.gov/assets/zoom_icon.png);background-size:50%;background-repeat:no-repeat;background-position:50%;opacity:0;-webkit-transition:opacity 0.2s ease-in;transition:opacity 0.2s ease-in;}
+a.inline_image_enlarge:hover .enlarge_icon{opacity:0.8;}
+/*.wysiwyg_content .image_module{max-width:100%;margin-top:1.4em;margin-bottom:1.4em;}
+@media (min-width: 769px), print{
+.wysiwyg_content .image_module{margin-top:2em;margin-bottom:2em;}
+}
+.wysiwyg_content .image_module.column-width{clear:both;}
+.image_module figure.inline_figure{margin-bottom:0;}
+.wysiwyg_content p{line-height:1.4em;}
+.wysiwyg_content p,.wysiwyg_content a{word-wrap:break-word;}
+#primary_column .wysiwyg_content>:first-child{margin-top:0;}
+.wysiwyg_content strong{font-weight:bold;}
+.wysiwyg_content .expandable_element{display:none;}
+.wysiwyg_content table{border-spacing:1px;border-collapse:separate;font-size:15px;line-height:normal;}
+.wysiwyg_content table th,.wysiwyg_content table td{padding:13px;}
+.wysiwyg_content table th{background-color:#ddd;font-weight:600;text-align:left;}
+.wysiwyg_content table td{background-color:#eee;}
+.wysiwyg_content .table_wrapper{width:100%;margin:1em 0;-webkit-overflow-scrolling:touch;}
+.wysiwyg_content .table_wrapper>div::-webkit-scrollbar{height:12px;}
+.wysiwyg_content .table_wrapper>div::-webkit-scrollbar-track{box-shadow:0 0 2px rgba(0,0,0,0.15) inset;background:#f0f0f0;}
+.wysiwyg_content .table_wrapper>div::-webkit-scrollbar-thumb{border-radius:6px;background:#ccc;}
+.wysiwyg_content table.mb_table{border-collapse:collapse;width:100%;}
+.wysiwyg_content table.mb_table td{background-color:transparent;}
+.wysiwyg_content table.mb_table th{background-color:white;color:black;font-size:.75em;font-weight:500;text-align:left;padding:13px;}
+@media (min-width: 600px), print{
+.wysiwyg_content table.mb_table th{font-size:.9em;}
+}
+.wysiwyg_content table.mb_table tbody td{font-size:.9em;}
+@media (min-width: 600px), print{
+.wysiwyg_content table.mb_table tbody td{font-size:1.1em;}
+}
+.wysiwyg_content table.mb_table tr:nth-child(even){background-color:#edf4fb;}
+.wysiwyg_content table.mb_table tr:nth-child(odd){background-color:#ffffff;}
+.wysiwyg_content table.mb_table td{border:1px solid #d2d2d2;padding:.8em;}
+.wysiwyg_content table.mb_table td:last-child{border-right:transparent;}
+}*/
+/*! CSS Used from: Embedded ; media=print */
+@media print{
+a[href]:after{content:"";}
+.module{padding:1em 0;}
+#primary_column{width:60%;float:left;overflow:hidden;position:relative;display:block;}
+}
+/*! CSS Used from: Embedded */
+h1.textWhite.textAlignLeft{color:white;}
+.vCentered .vCenteredInner{display:table-cell;vertical-align:middle;}
+.textAlignCenter{text-align:center!important;}
+.vCentered{display:table;}
+.textLarger{font-size:150%;line-height:normal;}
+.textWhite{color:#fff!important;}
+#InSight-Weather-Report.section{background: url("../images/insight_weather_bg.jpg") no-repeat top center;background-size:cover;}
+#InSight-Weather-Report.section .gradientOverlay{background:-owg-linear-gradient(to right, rgba(0,0,0,0.6) 0%, transparent 70%);background:-webkit-linear-gradient(to right, rgba(0,0,0,0.6) 0%, transparent 70%);background:-moz-linear-gradient(to right, rgba(0,0,0,0.6) 0%, transparent 70%);background:-o-linear-gradient(to right, rgba(0,0,0,0.6) 0%, transparent 70%);background:linear-gradient(to right, rgba(0,0,0,0.6) 0%, transparent 70%);z-index:1;}
+#InSight-Weather-Report #InSight-Weather-Content{padding:0 5% 0;}
+#InSight-Weather-Report #InSight-Weather-Content #InSight-Weather-Data{padding:50px 0 0 20px;width:55%;position:relative;z-index:1;}
+#InSight-Weather-Report #InSight-Weather-Data p{line-height:normal;width:95%;color:white;}
+#InSight-Weather-Report .slash,#InSight-Weather-Report .fadeWhite{color:rgba(255,255,255,0.5);}
+#weather_observation .lbl_fahrenheit,#weather_observation .lbl_celsius,#weather_observation .lbl_mph,#weather_observation .lbl_mps{cursor:pointer;}
+#weather_observation .fadeBlack{color:rgba(0,0,0,0.3);}
+.degree .lbl_fahrenheit,.degree .lbl_celsius{cursor:pointer;}
+.temperatures.main .fahrenheit,.temperatures.main .celsius{text-align:right;display:inline-block;}
+.highs,.lows{display:table;}
+.highs span,.lows span{display:table-cell;padding:0 3px;text-align:right;}
+span.dateSol{font-size:16px;font-weight:600;}
+#InSight-Weather-Report .vCentered{padding:5% 0;width:100%;}
+#InSight-Weather-Report .temperatures.main{padding-left:5%;}
+#InSight-Weather-Report #InSight-tempDate .marsDate{font-weight:bold;font-size:larger;}
+#InSight-Weather-Report #InSight-tempDate .marsDate,#InSight-Weather-Report #InSight-tempDate .earthDate{display:block;}
+#InSight-Weather-Report #InSight-Forecast{margin:0 auto;text-align:center;}
+#InSight-Weather-Report #InSight-Forecast .item{width:11%;margin:20px 1% 50px;background-color:rgba(0,0,0,0.25);padding:15px 0.2%;display:inline-block;text-align:center;font-weight:500;letter-spacing:1px;font-size:14px;}
+#InSight-Weather-Report #InSight-Forecast .item .fadeWhiteLine{background-color:rgba(255,255,255,0.5);height:2px;width:80%;text-align:center;margin:10px auto;}
+#InSight-Weather-Report #InSight-Forecast .item  .dateUTC{font-size:13px;font-weight:500;letter-spacing:0;display:block;}
+#InSight-Weather-Report #InSight-Forecast .item .low{color:white;}
+@media only screen and (max-width: 840px){
+#InSight-Weather-Report #InSight-Weather-Content #InSight-Weather-Data{width:100%;}
+#InSight-Weather-Report.section .gradientOverlay{background:-owg-linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 70%);background:-webkit-linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 70%);background:-moz-linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 70%);background:-o-linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 70%);background:linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 70%);z-index:1;}
+#InSight-Weather-Report #InSight-Forecast .item{font-size:0.9em;margin:20px 1% 50px;line-height:normal;padding:8px 3px;}
+#InSight-Weather-Report #InSight-tempDate .earthDate,#InSight-Weather-Report #InSight-Forecast .item .dateSol{font-size:16px;}
+#InSight-Weather-Report #InSight-Forecast .item .dateUTC{font-weight:300;}
+#InSight-Weather-Report #InSight-tempDate .earthDate{display:block;}
+#InSight-Weather-Report #InSight-Forecast .item{font-size:0.8em;}
+#InSight-Weather-Report #InSight-Forecast .item:nth-child(-n+3),#InSight-Weather-Report #InSight-Forecast .item:nth-child(-n+4){display:none;}
+#InSight-Weather-Report #InSight-Forecast .item{width:25%;font-size:0.9em;}
+}
+#weather_observation td{padding:10px 5px;text-align:center;}
+#weather_observation thead th{border:none;border-bottom:1px solid darkgray;background:#f9f9f9;padding:10px 5px;}
+#weather_observation th.sol,#weather_observation td.windspeed{background:#f9f9f9;border:none;}
+#weather_observation td.temperature,#weather_observation td.pressure{background:#fff;border:none;}
+
+table.mb_table th {
+    background-color: white;
+    color: black;
+    font-size: .75em;
+    font-weight: 500;
+    text-align: left;
+    padding: 13px;
+}
+@media (min-width: 600px), print {
+	table.mb_table th {
+	    font-size: .9em;
+	}
+}
+
+table.mb_table tbody td {
+    font-size: .9em;
+}
+@media (min-width: 600px), print {
+	table.mb_table tbody td {
+    	font-size: 1.1em;
+	}
+}
+
+[data-temperature-mode="fahrenheit"] .celsius {
+    display: none !important;
+}
+[data-temperature-mode="celsius"] .fahrenheit {
+    display: none !important;
+}
+[data-speed-mode="miles-per-hour"] .mps {
+    display: none !important;
+}
+[data-speed-mode="meters-per-second"] .mph {
+    display: none !important;
+}
+
