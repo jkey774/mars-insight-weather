@@ -72,7 +72,9 @@ public class Sol implements Serializable {
         this.airTemperature = new AirTemperature(this.airTemperatureData);
     }
 
-    public AirPressure getAirPressure() { return new AirPressure(this.airPressureData); }
+    public AirPressure getAirPressure() { 
+        return new AirPressure(this.airPressureData); 
+    }
 
     public void setAirPressure() {
         this.airPressure = new AirPressure(this.airPressureData);
