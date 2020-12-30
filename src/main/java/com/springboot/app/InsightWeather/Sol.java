@@ -62,10 +62,10 @@ public class Sol implements Serializable {
     }
 
     public AirTemperature getAirTemperature() {
-        if (airTemperatureData == null)
+        if (this.airTemperatureData == null)
             return new AirTemperature();
 
-        return new AirTemperature(airTemperatureData);
+        return new AirTemperature(this.airTemperatureData);
 
     }
 

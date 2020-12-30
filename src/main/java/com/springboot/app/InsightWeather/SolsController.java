@@ -1,6 +1,5 @@
 package com.springboot.app.InsightWeather;
 
-// import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -11,12 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Iterator;
 
 @Controller
-//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class SolsController {
 
     @GetMapping("/")
