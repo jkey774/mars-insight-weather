@@ -52,14 +52,7 @@ public class SolsController {
 
         Sol[] sols = objectMapper.convertValue(solsData, Sol[].class);
         model.addAttribute("solsCalendar", sols);
-
-        Sol[] reversed = reverseSols(sols, sols.length);
-        System.out.println("Sols.length" + sols.length);
-        System.out.println("reversed.length" + reversed.length);
-
         model.addAttribute("solsTable", reverseSols(sols, sols.length));
-
-
 
         return "sols";
     }

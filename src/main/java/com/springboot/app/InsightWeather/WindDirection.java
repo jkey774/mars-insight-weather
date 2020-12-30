@@ -25,8 +25,4 @@ public class WindDirection {
         return this.compassPoint;
     }
 
-    public void setCompassPoint(String compassPoint) {
-        this.compassPoint = compassPoint;
-    }
-
 }

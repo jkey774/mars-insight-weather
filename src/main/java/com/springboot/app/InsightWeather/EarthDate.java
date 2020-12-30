@@ -21,10 +21,6 @@ public class EarthDate {
         return utcDateString;
     }
 
-    public void setUtcDateString(String utcDateString) {
-        this.utcDateString = utcDateString;
-    }
-
     public String getMonth() {
         String month = String.valueOf(this.dateObject.getMonth()).toLowerCase();
         return month.substring(0, 1).toUpperCase() + month.substring(1);

@@ -57,16 +57,8 @@ public class Sol implements Serializable {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public EarthDate getEarthDate() {
         return new EarthDate(this.earthDateTimestamp);
-    }
-
-    public void setEarthDate() {
-        this.earthDate = new EarthDate(this.earthDateTimestamp);
     }
 
     public AirTemperature getAirTemperature() {
@@ -77,19 +69,11 @@ public class Sol implements Serializable {
 
     }
 
-    public void setAirTemperature() {
-        this.airTemperature = new AirTemperature(this.airTemperatureData);
-    }
-
     public AirPressure getAirPressure() {
         if (this.airTemperatureData == null)
             return new AirPressure();
 
         return new AirPressure(this.airPressureData);
-    }
-
-    public void setAirPressure() {
-        this.airPressure = new AirPressure(this.airPressureData);
     }
 
     public WindSpeed getWindSpeed() {
@@ -99,19 +83,11 @@ public class Sol implements Serializable {
         return new WindSpeed(this.windSpeedData);
     }
 
-    public void setWindSpeed() {
-        this.windSpeed = new WindSpeed(this.windSpeedData);
-    }
-
     public WindDirection getWindDirection() {
         if (this.windDirectionData == null)
             return new WindDirection();
 
         return new WindDirection(this.windDirectionData);
-    }
-
-    public void setWindDirection() {
-        this.windDirection = new WindDirection(this.windDirectionData);
     }
 
     @Override

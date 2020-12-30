@@ -42,48 +42,24 @@ public class WindSpeed {
         return format(this.avgMetersPerSecond);
     }
 
-    public void setAvgMetersPerSecond(String avgMetersPerSecond) {
-        this.avgMetersPerSecond = format(avgMetersPerSecond);
-    }
-
     public String getMinMetersPerSecond() {
         return format(this.minMetersPerSecond);
-    }
-
-    public void setMinMetersPerSecond(String minMetersPerSecond) {
-        this.minMetersPerSecond = format(minMetersPerSecond);
     }
 
     public String getMaxMetersPerSecond() {
         return format(this.maxMetersPerSecond);
     }
 
-    public void setMaxMetersPerSecond(String maxMetersPerSecond) {
-        this.maxMetersPerSecond = format(maxMetersPerSecond);
-    }
-
     public String getAvgMilesPerHour() {
         return format(metersPerSecondToMilesPerHour(this.avgMetersPerSecond));
-    }
-
-    public void setAvgMilesPerHour() {
-        this.avgMilesPerHour = format(metersPerSecondToMilesPerHour(this.avgMetersPerSecond));
     }
 
     public String getMinMilesPerHour() {
         return format(metersPerSecondToMilesPerHour(this.minMetersPerSecond));
     }
 
-    public void setMinMilesPerHour() {
-        this.minMilesPerHour = format(metersPerSecondToMilesPerHour(this.minMetersPerSecond));
-    }
-
     public String getMaxMilesPerHour() {
         return format(metersPerSecondToMilesPerHour(this.maxMetersPerSecond));
-    }
-
-    public void setMaxMilesPerHour() {
-        this.maxMilesPerHour = format(metersPerSecondToMilesPerHour(this.maxMetersPerSecond));
     }
 
     private String format(String speed) {

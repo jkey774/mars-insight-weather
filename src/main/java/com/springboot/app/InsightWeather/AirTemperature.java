@@ -40,48 +40,24 @@ public class AirTemperature {
         return format(this.avgCelsius);
     }
 
-    public void setAvgCelsius(String avgCelsius) {
-        this.avgCelsius = format(avgCelsius);
-    }
-
     public String getMinCelsius() {
         return format(this.minCelsius);
-    }
-
-    public void setMinCelsius(String minCelsius) {
-        this.minCelsius = format(minCelsius);
     }
 
     public String getMaxCelsius() {
         return format(this.maxCelsius);
     }
 
-    public void setMaxCelsius(String maxCelsius) {
-        this.maxCelsius = format(maxCelsius);
-    }
-
     public String getMinFahrenheit() {
         return format(celsiusToFahrenheit(this.minCelsius));
-    }
-
-    public void setMinFahrenheit() {
-        this.minFahrenheit = format(celsiusToFahrenheit(this.minCelsius));
     }
 
     public String getAvgFahrenheit() {
         return format(celsiusToFahrenheit(this.avgCelsius));
     }
 
-    public void setAvgFahrenheit() {
-        this.avgFahrenheit = format(celsiusToFahrenheit(this.avgCelsius));
-    }
-
     public String getMaxFahrenheit() {
         return format(celsiusToFahrenheit(this.maxCelsius));
-    }
-
-    public void setMaxFahrenheit() {
-        this.avgFahrenheit = format(celsiusToFahrenheit(this.maxCelsius));
     }
 
     private String format(String temperature) {
