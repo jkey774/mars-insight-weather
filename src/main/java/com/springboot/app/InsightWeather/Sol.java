@@ -1,12 +1,17 @@
 package com.springboot.app.InsightWeather;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 @Component
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -65,20 +70,32 @@ public class Sol implements Serializable {
     }
 
     public AirTemperature getAirTemperature() {
-        return new AirTemperature(this.airTemperatureData);
+        if (airTemperatureData == null)
+            return new AirTemperature();
+
+        return new AirTemperature(airTemperatureData);
+
     }
 
     public void setAirTemperature() {
         this.airTemperature = new AirTemperature(this.airTemperatureData);
     }
 
-    public AirPressure getAirPressure() { return new AirPressure(this.airPressureData); }
+    public AirPressure getAirPressure() {
+        if (this.airTemperatureData == null)
+            return new AirPressure();
+
+        return new AirPressure(this.airPressureData);
+    }
 
     public void setAirPressure() {
         this.airPressure = new AirPressure(this.airPressureData);
     }
 
     public WindSpeed getWindSpeed() {
+        if (windSpeedData == null)
+            return new WindSpeed();
+
         return new WindSpeed(this.windSpeedData);
     }
 
@@ -87,13 +104,15 @@ public class Sol implements Serializable {
     }
 
     public WindDirection getWindDirection() {
+        if (this.windDirectionData == null)
+            return new WindDirection();
+
         return new WindDirection(this.windDirectionData);
     }
 
     public void setWindDirection() {
         this.windDirection = new WindDirection(this.windDirectionData);
     }
-
 
     @Override
     public String toString() {

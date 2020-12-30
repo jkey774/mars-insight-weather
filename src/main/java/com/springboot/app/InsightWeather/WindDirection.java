@@ -8,11 +8,17 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 public class WindDirection {
 
     private JsonNode summaryData;
-    private String compassPoint;
+    private String compassPoint = "";
+
+    public WindDirection() {}
 
     public WindDirection(ObjectNode data) {
-        this.summaryData = data.get("most_common");
-        this.compassPoint = this.summaryData.get("compass_point").toString().replace("\"", "");
+        if (data != null) {
+            this.summaryData = data.get("most_common");
+            if (this.summaryData != null && this.summaryData.get("compass_point") != null) {
+                this.compassPoint = this.summaryData.get("compass_point").toString().replace("\"", "");
+            }
+        }
     }
 
     public String getCompassPoint() {
