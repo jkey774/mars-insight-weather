@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 @Component
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Sol implements SolInterface, Serializable {
+public class Sol implements Serializable {
 
     private ObjectMapper objectMapper;
 
