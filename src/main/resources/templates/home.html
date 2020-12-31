@@ -104,7 +104,7 @@
                                         <td class="pressure min">Min.</td>
                                     </tr>
                                     <tr th:each="sol : ${solsTable}">
-                                        <th scope="row" class="sol" th:text="${sol.earthDate.monthAbbreviated + ' ' + sol.earthDate.day}"></th>
+                                        <th scope="row" class="sol" th:text="${sol.earthDate.monthAbbreviated + ' ' + sol.earthDate.day + ', ' + sol.earthDate.year}"></th>
                                         <th scope="row" class="sol" th:text="${sol.id}"></th>
                                         <td class="temperature max">
                                             <span class="fahrenheit"><nobr th:text="${sol.airTemperature.maxFahrenheit + '° F'}"></nobr></span>

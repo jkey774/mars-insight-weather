@@ -26,4 +26,6 @@ public class EarthDate {
         return dateObject.getDayOfMonth();
     }
 
+    public int getYear() { return dateObject.getYear(); }
+
 }
