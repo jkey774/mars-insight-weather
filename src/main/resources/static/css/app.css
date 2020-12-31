@@ -75,6 +75,13 @@ img{width:100%;}
 img{max-width:100%;}
 strong{font-weight:700;}
 p{margin:1em 0;font-size:100%;}
+.flex{display:-webkit-box;display:-ms-flexbox;display:flex}
+.f-justify-sb{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+@media (max-width:767px){.xs-block{display:block;}}
+.text-right{text-align:right;}
+.text-underline{text-decoration:underline;}
+.font-w-500{font-weight:500;}
+.margin-b-20{margin-bottom:20px;}
 .article_title{letter-spacing:-.02em;}
 .article_title{font-size:1.82em;margin-bottom:0em;font-weight:600;margin-top:0;}
 @media (min-width: 600px), print{

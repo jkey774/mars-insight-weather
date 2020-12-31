@@ -10,26 +10,21 @@ import java.io.Serializable;
 
 @Component
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Sol implements Serializable {
+public class Sol implements SolInterface, Serializable {
+
+    private ObjectMapper objectMapper;
 
     private String id;
 
     private String earthDateTimestamp;
-    private EarthDate earthDate;
 
     private ObjectNode airTemperatureData;
-    private AirTemperature airTemperature;
 
     private ObjectNode airPressureData;
-    private AirPressure airPressure;
 
     private ObjectNode windSpeedData;
-    private WindSpeed windSpeed;
 
     private ObjectNode windDirectionData;
-    private WindDirection windDirection;
-
-    private ObjectMapper objectMapper;
 
     public Sol() {}
 
@@ -85,15 +80,5 @@ public class Sol implements Serializable {
             return new WindDirection();
 
         return objectMapper.convertValue(windDirectionData, WindDirection.class);
-    }
-
-    @Override
-    public String toString() {
-        return "Sol{" +
-                "id='" + id + '\'' +
-                ", First_UTC='" + earthDateTimestamp + '\'' +
-                ", earthDate=" + earthDate +
-                ", atmosphereTemperature=" + airTemperature +
-                '}';
     }
 }
