@@ -1,6 +1,7 @@
 package com.springboot.app.InsightWeather;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -9,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
+import javax.sound.sampled.Line;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,6 +36,8 @@ public class Sol implements Serializable {
     private ObjectNode windDirectionData;
     private WindDirection windDirection;
 
+    private ObjectMapper objectMapper;
+
     public Sol() {}
 
     @JsonCreator
@@ -45,6 +49,7 @@ public class Sol implements Serializable {
             @JsonProperty("HWS") ObjectNode windSpeedData,
             @JsonProperty("WD") ObjectNode windDirectionData
     ) {
+        this.objectMapper = new ObjectMapper();
         this.id = id;
         this.earthDateTimestamp = earthDateTimestamp;
         this.airTemperatureData = airTemperatureData;
@@ -58,36 +63,35 @@ public class Sol implements Serializable {
     }
 
     public EarthDate getEarthDate() {
-        return new EarthDate(this.earthDateTimestamp);
+        return new EarthDate(earthDateTimestamp);
     }
 
     public AirTemperature getAirTemperature() {
-        if (this.airTemperatureData == null)
+        if (airTemperatureData == null)
             return new AirTemperature();
 
-        return new AirTemperature(this.airTemperatureData);
-
+        return objectMapper.convertValue(airTemperatureData, AirTemperature.class);
     }
 
     public AirPressure getAirPressure() {
-        if (this.airTemperatureData == null)
+        if (airPressureData == null)
             return new AirPressure();
 
-        return new AirPressure(this.airPressureData);
+        return objectMapper.convertValue(airPressureData, AirPressure.class);
     }
 
     public WindSpeed getWindSpeed() {
         if (windSpeedData == null)
             return new WindSpeed();
 
-        return new WindSpeed(this.windSpeedData);
+        return objectMapper.convertValue(windSpeedData, WindSpeed.class);
     }
 
     public WindDirection getWindDirection() {
-        if (this.windDirectionData == null)
+        if (windDirectionData == null)
             return new WindDirection();
 
-        return new WindDirection(this.windDirectionData);
+        return objectMapper.convertValue(windDirectionData, WindDirection.class);
     }
 
     @Override

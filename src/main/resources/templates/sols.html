@@ -37,7 +37,7 @@
                                             <div class="highs">
                                                 <span class="text">High: </span>
                                                 <span class="fahrenheit" th:text="${mostRecentSol.airTemperature.maxFahrenheit + '°'}"></span>
-                                                <span class="celsius" th:text="${mostRecentSol.airTemperature.maxCelsius + '°'}"></span>
+                                                <span class="celsius" th:text="${mostRecentSol.airTemperature.max + '°'}"></span>
                                                 <span class="degree">
                                                     <span class="lbl_fahrenheit">F</span><span class="slash"> | </span><span class="lbl_celsius fadeWhite">C</span>
                                                 </span>
@@ -45,7 +45,7 @@
                                             <div class="lows">
                                                 <span class="text">Low: </span>
                                                 <span class="fahrenheit" th:text="${mostRecentSol.airTemperature.minFahrenheit + '°'}"></span>
-                                                <span class="celsius" th:text="${mostRecentSol.airTemperature.minCelsius + '°'}"></span>
+                                                <span class="celsius" th:text="${mostRecentSol.airTemperature.min + '°'}"></span>
                                                 <span class="degree">
                                                     <span class="lbl_fahrenheit">F</span><span class="slash"> | </span><span class="lbl_celsius fadeWhite">C</span>
                                                 </span>
@@ -64,8 +64,8 @@
                                         <span class="low">Low: <nobr th:text="${sol.airTemperature.minFahrenheit + '° F'}"></nobr></span>
                                     </div>
                                     <div class="celsius">
-                                        <span class="high">High: <nobr th:text="${sol.airTemperature.maxCelsius + '° C'}"></nobr><br></span>
-                                        <span class="low">Low: <nobr th:text="${sol.airTemperature.minCelsius + '° C'}"></nobr></span>
+                                        <span class="high">High: <nobr th:text="${sol.airTemperature.max + '° C'}"></nobr><br></span>
+                                        <span class="low">Low: <nobr th:text="${sol.airTemperature.min + '° C'}"></nobr></span>
                                     </div>
                                 </div>
                             </div>
@@ -104,27 +104,27 @@
                                         <th scope="row" class="sol" th:text="${sol.id}"></th>
                                         <td class="temperature max">
                                             <span class="fahrenheit"><nobr th:text="${sol.airTemperature.maxFahrenheit + '° F'}"></nobr></span>
-                                            <span class="celsius"><nobr th:text="${sol.airTemperature.maxCelsius + '° C'}"></nobr></span>
+                                            <span class="celsius"><nobr th:text="${sol.airTemperature.max + '° C'}"></nobr></span>
                                         </td>
                                         <td class="temperature avg">
                                             <span class="fahrenheit"><nobr th:text="${sol.airTemperature.avgFahrenheit + '° F'}"></nobr></span>
-                                            <span class="celsius"><nobr th:text="${sol.airTemperature.avgCelsius + '° C'}"></nobr></span>
+                                            <span class="celsius"><nobr th:text="${sol.airTemperature.avg + '° C'}"></nobr></span>
                                         </td>
                                         <td class="temperature min">
                                             <span class="fahrenheit"><nobr th:text="${sol.airTemperature.minFahrenheit + '° F'}"></nobr></span>
-                                            <span class="celsius"><nobr th:text="${sol.airTemperature.minCelsius + '° C'}"></nobr></span>
+                                            <span class="celsius"><nobr th:text="${sol.airTemperature.min + '° C'}"></nobr></span>
                                         </td>
                                         <td class="windspeed max">
                                             <span class="mph"><nobr th:text="${sol.windSpeed.maxMilesPerHour}"></nobr></span>
-                                            <span class="mps"><nobr th:text="${sol.windSpeed.maxMetersPerSecond}"></nobr></span>
+                                            <span class="mps"><nobr th:text="${sol.windSpeed.max}"></nobr></span>
                                         </td>
                                         <td class="windspeed avg">
                                             <span class="mph"><nobr th:text="${sol.windSpeed.avgMilesPerHour}"></nobr></span>
-                                            <span class="mps"><nobr th:text="${sol.windSpeed.avgMetersPerSecond}"></nobr></span>
+                                            <span class="mps"><nobr th:text="${sol.windSpeed.avg}"></nobr></span>
                                         </td>
                                         <td class="windspeed min">
                                             <span class="mph"><nobr th:text="${sol.windSpeed.minMilesPerHour}"></nobr></span>
-                                            <span class="mps"><nobr th:text="${sol.windSpeed.minMetersPerSecond}"></nobr></span>
+                                            <span class="mps"><nobr th:text="${sol.windSpeed.min}"></nobr></span>
                                         </td>
                                         <td class="windspeed point" th:text="${sol.windDirection.compassPoint}"></td>
                                         <td class="pressure max" th:text="${sol.airPressure.max}"></td>

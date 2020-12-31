@@ -1,80 +1,53 @@
 package com.springboot.app.InsightWeather;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import org.springframework.util.StringUtils;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import static com.springboot.app.InsightWeather.utils.SolDataUtils.celsiusToFahrenheit;
+import static com.springboot.app.InsightWeather.utils.SolDataUtils.formatNumber;
 
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AirTemperature {
 
-    private String avgCelsius = "";
-    private String minCelsius = "";
-    private String maxCelsius = "";
+    private String min;
+    private String avg;
+    private String max;
 
-    private String avgFahrenheit = "";
-    private String minFahrenheit = "";
-    private String maxFahrenheit = "";
+    public AirTemperature() {}
 
-    private DecimalFormat df = new DecimalFormat("#.#");
-
-    public AirTemperature() {
-        this.df.setRoundingMode(RoundingMode.HALF_UP);
+    @JsonCreator
+    public AirTemperature(
+            @JsonProperty("mn") String min,
+            @JsonProperty("av") String avg,
+            @JsonProperty("mx") String max
+    ) {
+        this.min = min;
+        this.avg = avg;
+        this.max = max;
     }
 
-    public AirTemperature(ObjectNode data) {
-        this();
-        if (data != null) {
-            if (data.get("av") != null)
-                this.avgCelsius = data.get("av").toString();
-            if (data.get("mn") != null)
-                this.minCelsius = data.get("mn").toString();
-            if (data.get("mx") != null)
-                this.maxCelsius = data.get("mx").toString();
-        }
+    public String getMin() {
+        return formatNumber(min);
     }
 
-    public String getAvgCelsius() {
-        return format(this.avgCelsius);
+    public String getAvg() {
+        return formatNumber(avg);
     }
 
-    public String getMinCelsius() {
-        return format(this.minCelsius);
-    }
-
-    public String getMaxCelsius() {
-        return format(this.maxCelsius);
+    public String getMax() {
+        return formatNumber(max);
     }
 
     public String getMinFahrenheit() {
-        return format(celsiusToFahrenheit(this.minCelsius));
+        return formatNumber(celsiusToFahrenheit(min));
     }
 
     public String getAvgFahrenheit() {
-        return format(celsiusToFahrenheit(this.avgCelsius));
+        return formatNumber(celsiusToFahrenheit(avg));
     }
 
     public String getMaxFahrenheit() {
-        return format(celsiusToFahrenheit(this.maxCelsius));
+        return formatNumber(celsiusToFahrenheit(max));
     }
-
-    private String format(String temperature) {
-        if (!StringUtils.hasLength(temperature))
-            return "";
-
-        double value = Double.parseDouble(temperature);
-        return df.format(value);
-    }
-
-    private static String celsiusToFahrenheit(String celsius) {
-        if (!StringUtils.hasLength(celsius))
-            return "";
-
-        // Formula: (0°C × 9/5) + 32 = 32°F
-        double temperature = Double.parseDouble(celsius);
-        return String.valueOf((temperature * (9.0 / 5.0)) + 32.0);
-    }
-
 }
