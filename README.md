@@ -1,4 +1,6 @@
 # mars-insight-weather
+mvn spring-boot:run
+
 This is a Java Spring Boot web application deployed to Heroku that fetches and displays Mars weather data returned from NASA's Mars Weather Service API.
 
 This was just an attempt to recreate this: https://mars.nasa.gov/insight/weather/
