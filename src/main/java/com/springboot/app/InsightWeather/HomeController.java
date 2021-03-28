@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 @Controller
 public class HomeController {
@@ -20,8 +21,8 @@ public class HomeController {
         RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
         RestService restService = new RestService(restTemplateBuilder);
         ObjectMapper objectMapper = new ObjectMapper();
-        // JsonNode payload = objectMapper.readTree(new FileInputStream("/Users/jkey3/IdeaProjects/InSight/src/main/java/com/springboot/app/InsightWeather/ExampleJSON.json"));
-        JsonNode payload = objectMapper.readTree(restService.getSols());
+        // JsonNode payload = objectMapper.readTree(restService.getSols());
+        JsonNode payload = objectMapper.readTree(getClass().getClassLoader().getResourceAsStream("ExampleJSON.json"));
         try {
             SolsArray solsArray = new SolsArray(payload);
             model.addAttribute("solsCalendar", solsArray.getSols());

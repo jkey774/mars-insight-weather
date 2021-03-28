@@ -17,8 +17,8 @@ public class RestEndpointController {
         RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
         RestService restService = new RestService(restTemplateBuilder);
         ObjectMapper objectMapper = new ObjectMapper();
-        // JsonNode payload = objectMapper.readTree(new FileInputStream("/Users/jkey3/IdeaProjects/InSight/src/main/java/com/springboot/app/InsightWeather/ExampleJSON.json"));
-        JsonNode payload = objectMapper.readTree(restService.getSols());
+        // JsonNode payload = objectMapper.readTree(restService.getSols());
+        JsonNode payload = objectMapper.readTree(getClass().getClassLoader().getResourceAsStream("ExampleJSON.json"));
         return payload;
     }
 
@@ -27,8 +27,8 @@ public class RestEndpointController {
         RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
         RestService restService = new RestService(restTemplateBuilder);
         ObjectMapper objectMapper = new ObjectMapper();
-        // JsonNode payload = objectMapper.readTree(new FileInputStream("/Users/jkey3/IdeaProjects/InSight/src/main/java/com/springboot/app/InsightWeather/ExampleJSON.json"));
-        JsonNode payload = objectMapper.readTree(restService.getSols());
+        // JsonNode payload = objectMapper.readTree(restService.getSols());
+        JsonNode payload = objectMapper.readTree(getClass().getClassLoader().getResourceAsStream("ExampleJSON.json"));
         SolsArray solsArray = new SolsArray(payload);
         return solsArray.getSols();
     }
